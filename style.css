@@ -12,9 +12,6 @@
     --White: hsl(0, 0%, 100%);
     --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
     --Slightly-transparent-white-1: hsla(0, 0%, 100%, 0.6);
-
-    /* Edited */
-    --Soft-violet-1 :  hsl(275, 100%, 32%);
   
 }
 
@@ -23,13 +20,13 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
     background-color: var(--Very-dark-blue);
-    padding: 0 80px;
-    margin: 100px auto;
 }
 
 /* Styling Container */
 #container {
     display: grid;
+    margin: 100px auto 50px auto;
+    width: 1040px;
 }
 
 /* Styling Section One */
@@ -85,19 +82,11 @@ body {
     width: 540px;
     max-width: 100%;
     position: relative;
-    background-image: url(./images/image-header-desktop.jpg);
+    background-image: linear-gradient(
+        hsla(281, 60%, 30%, 0.6),
+        hsla(281, 60%, 30%, 0.6)
+      ),url(./images/image-header-desktop.jpg);
     background-repeat: no-repeat;
-    border-radius: 0 8px 8px 0;
-}
-
-#cover {
-    position: absolute;
-    width: 540px;
-    max-width: 540px;
-    height: 446px; 
-    max-height: 446px;
-    background-color: var(--Soft-violet-1);
-    opacity: 0.5;
     border-radius: 0 8px 8px 0;
 }
 
@@ -106,6 +95,7 @@ body {
     text-align: center; 
     color: white;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .attribution a { 
@@ -114,11 +104,11 @@ body {
 
 
 /* Responsiveness */
-@media screen and (min-width:800px) and (max-width:1000px) {
+@media screen and (min-width:550px) and (max-width:1100px) {
     /* Styling Page */
-    body {
-        padding: 0 230px;
-    }
+    #container {
+        width: 450px;
+    }    
     
     /* Styling Section One */
     #section1 {
@@ -129,36 +119,19 @@ body {
         padding: 20px 20px 40px 20px;
     }
 
-    #section1 #upper br {
-        display: none;
-    }
-
-    #section1 #lower br {
-        display: none;
-    }
-
-    #section1 #upper {
-        font-size: 30px;
-    }
-
     #review {
-        flex-direction: column;
-        gap: 30px;
-        margin-top: -10px
+        justify-content: center;
     }
 
     /* Styling Section Two */
     #section2 {
         grid-column: 1;
         grid-row: 1;
-        background-image: url(./images/image-header-mobile.jpg);
+        background-image: linear-gradient(
+        hsla(281, 60%, 30%, 0.6),
+        hsla(281, 60%, 30%, 0.6)
+        ),url(./images/image-header-desktop.jpg);
         background-size: 100% 280px;
-        height: 280px;
-        width: 100%;
-        border-radius: 8px 8px 0 0;
-    }
-    
-    #cover {
         height: 280px;
         width: 100%;
         border-radius: 8px 8px 0 0;
@@ -166,19 +139,22 @@ body {
 
 }
 
-@media screen and (min-width:600px) and (max-width:800px) {
+@media screen and (max-width:550px) {
     /* Styling Page */
-    body {
-        padding: 0 130px;
+    #container {
+        width: 320px;
     }
-    
     /* Styling Section One */
     #section1 {
         grid-column: 1;
         grid-row: 2;
         text-align: center;
         border-radius: 0 0 8px 8px;
-        padding: 20px 20px 40px 20px;
+        padding: 20px 25px 40px 25px;
+    }
+
+    #section1 #upper {
+        font-size: 28px;
     }
 
     #section1 #upper br {
@@ -188,11 +164,7 @@ body {
     #section1 #lower br {
         display: none;
     }
-
-    #section1 #upper {
-        font-size: 30px;
-    }
-
+    
     #review {
         flex-direction: column;
         gap: 30px;
@@ -203,67 +175,11 @@ body {
     #section2 {
         grid-column: 1;
         grid-row: 1;
-        background-image: url(./images/image-header-mobile.jpg);
+        background-image: linear-gradient(
+            hsla(281, 60%, 30%, 0.6),
+            hsla(281, 60%, 30%, 0.6)
+          ),url(./images/image-header-mobile.jpg);
         background-size: 100% 280px;
-        height: 280px;
-        width: 100%;
-        border-radius: 8px 8px 0 0;
-    }
-    
-    #cover {
-        height: 280px;
-        width: 100%;
-        border-radius: 8px 8px 0 0;
-    }
-
-}
-
-
-@media screen and (max-width:600px) {
-    /* Styling Page */
-    body {
-        padding: 0 30px;
-    }
-    
-    /* Styling Section One */
-    #section1 {
-        grid-column: 1;
-        grid-row: 2;
-        text-align: center;
-        border-radius: 0 0 8px 8px;
-        padding: 20px 20px 40px 20px;
-    }
-
-    #section1 #upper br {
-        display: none;
-    }
-
-    #section1 #lower br {
-        display: none;
-    }
-
-    #section1 #upper {
-        font-size: 30px;
-    }
-
-    #review {
-        flex-direction: column;
-        gap: 30px;
-        margin-top: -10px
-    }
-
-    /* Styling Section Two */
-    #section2 {
-        grid-column: 1;
-        grid-row: 1;
-        background-image: url(./images/image-header-mobile.jpg);
-        background-size: 100% 280px;
-        height: 280px;
-        width: 100%;
-        border-radius: 8px 8px 0 0;
-    }
-    
-    #cover {
         height: 280px;
         width: 100%;
         border-radius: 8px 8px 0 0;
